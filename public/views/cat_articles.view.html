@@ -1,0 +1,20 @@
+<h3 class="heading">Articles for category: {{category}}</h3>
+<div ng-controller="ArticlesCategoryCtrl">
+	<a href="#/categories">Go Back</a>
+	<div class="row">
+		<div class="articles clearfix">
+			<div ng-repeat="article in cat_articles">
+				<div class="col-md-12">
+					<div class="article">
+						<h3>{{article.title}}</h3>
+						<p>{{article.body | limitTo:50}}</p>
+						<a class="btn btn-default" href="#/articles/details/{{article._id}}">Read Article</a>
+					</div>
+				</div>
+			</div>
+			<div ng-if="articles == false">
+				No articles found
+			</div>
+		</div>
+	</div>
+</div>
